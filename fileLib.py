@@ -38,3 +38,20 @@ def readByteSized(f):
 	l = readByte(f)
 	if l == None: return None
 	return f.read(l)
+
+def writeBinaryHashTable(outputFile, hashPairs):
+	with open(outputFile, "wb") as f:
+		for hshp in hashPairs:
+			writeByteSized(f, hshp[0])
+			writeByteSized(f, hshp[1])
+
+def readBinaryHashTable(inputFile):
+	with open(inputFile, "rb") as f:
+		while True:
+			first = readByteSized(f)
+			if(first == None):
+				break
+			second = readByteSized(f)
+			if(second == None):
+				break
+			yield (first, second)
