@@ -2,20 +2,12 @@
 import multiprocessing
 import functools
 import hashlib
-import random
-import csv
-import os
-import struct
-import base64
-import codecs
 import math
 import itertools
-import zmq
 from changeLib import *
 from fileLib import *
 from domainLib import *
 from utilLib import *
-from rainlib import *
 
 def numericDomainGenerator(wordgenerator):
 	for word in wordgenerator:
